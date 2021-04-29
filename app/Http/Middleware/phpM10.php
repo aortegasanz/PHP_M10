@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class M10Middleware
+class phpM10
 {
     /**
      * Handle an incoming request.
@@ -15,12 +15,12 @@ class M10Middleware
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {
+    {        
         echo ('
                 <div class="container text-right" style="padding:20px;">
-                    MIDDLEWARE GLOBAL >> Data actual : '.date('d/m/Y H:i:s')).'
+                    MIDDLEWARE CONRTROLADOR > Data actual : '.date('d/m/Y H:i:s')).'
                 </div>
-              ';
+              ';        
         return $next($request);
     }
 }

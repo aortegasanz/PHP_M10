@@ -32,10 +32,22 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
+    /*
     public function register()
     {
         $this->reportable(function (Throwable $e) {
             //
         });
-    }
+            
+    }*/
+
+    public function register()
+    {
+        $this->renderable(function (Throwable $e) {
+           $code = $e->getStatusCode();
+           if($code == 404) {
+               return response()->view('errors.custom.404');
+           }
+        });
+    }    
 }

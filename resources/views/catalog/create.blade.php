@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <h1>CREATE</h1>
-    </div>
-    <div class="container">
+        <h1>CATALOG</h1>
+        @if (isset($pageContent))
+            <h5>{{ $pageContent }}</h5>
+        @endif        
         <form action="{{ route('catalog.store') }}" method="post">
             @csrf
             <div class="row">

@@ -2,15 +2,11 @@
 @section('content')
     <div class="container">
         <h1>CATALOG</h1>
-    </div>
-    @if (Session::get('success'))
-        <div class="alert alert-success">{!! Session::get('success') !!}</div>
-        @php Session::forget('success') @endphp
-    @else   
-        <h1>hola</h1>
-    @endif
-    <div class="container">
-        @if (isset($pageContent)) 
+        @if (Session::get('success'))
+            <div class="alert alert-success">{!! Session::get('success') !!}</div>
+            @php Session::forget('success') @endphp
+        @endif
+        @if (isset($pageContent))
             <h5>{{ $pageContent }}</h5>
         @endif
         @if (isset($llibres))
@@ -25,10 +21,10 @@
                     <td>{{ $llibre['id'] }}</td>
                     <td>{{ $llibre['nom'] }}</td>
                     <td>
-                        <i class="far fa-eye"></i>
+                        <a href="{{ route('catalog.show',   $llibre['id']) }}"><i class="far fa-eye"></i></a> 
                         <a href="{{ route('catalog.create') }}"><i class="fas fa-plus-square"></i></i></a>
-                        <i class="fas fa-edit"></i>
-                        <i class="fas fa-trash-alt"></i>
+                        <a href="{{ route('catalog.edit',   $llibre['id']) }}"><i class="fas fa-edit"></i></a> 
+                        <a href="{{ route('catalog.delete', $llibre['id']) }}"><i class="far fa-trash-alt"></i></a> 
                     </td>
                 </tr>
             @endforeach

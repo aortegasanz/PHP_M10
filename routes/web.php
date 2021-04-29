@@ -44,21 +44,33 @@ Route::post('catalog/edit/{id}', function(Request $request, $id) {
 })->name('catalog.edit');
 */
 
-//------------
-//  Exercici 2
-//-----------
+//------------------
+//  Exercici 2 - 3
+//------------------
 Route::post('login', function() {
     return view('auth.login');
 });
 Route::get('logout', function() {
     return view('home', ['logout' => 'El usuari ha seleccionat "Logout"']);
 });
-Route::get  ('catalog/list',      [CatalogController::class, 'index'])->name('catalog.list');
-Route::get  ('catalog/show/{id}', [CatalogController::class, 'show'])->name('catalog.show');
-Route::get  ('catalog/create',    [CatalogController::class, 'create'])->name('catalog.create');
-Route::post ('catalog/store',     [CatalogController::class, 'store'])->name('catalog.store');
-Route::get ('catalog/edit/{id}',  [CatalogController::class,  'edit'])->name('catalog.edit');
+Route::get  ('catalog/show/{id}',   [CatalogController::class, 'show'])->name('catalog.show');
+Route::get  ('catalog/create',      [CatalogController::class, 'create'])->name('catalog.create');
+Route::get  ('catalog/delete/{id}', [CatalogController::class, 'delete'])->name('catalog.delete');
+Route::post ('catalog/store',       [CatalogController::class, 'store'])->name('catalog.store');
+Route::get  ('catalog/edit/{id}',   [CatalogController::class, 'edit'])->name('catalog.edit');
 
-//------------ 
-// Exercici 3
-//------------
+//------------------
+// Exercici 4
+//------------------
+Route::get('test', ['middleware' => 'phpM10', function () {
+    return '<div class="container text-right" style="padding-left:20px;">
+                probando probando middleware a nivel de controlador.
+            </div>';
+}]);
+
+Route::group(['middleware' => 'phpM10'], function() {
+    Route::get('test2222'   , function () {
+        return "get 222";
+    });
+    Route::get  ('catalog/list',        [CatalogController::class, 'index'])->name('catalog.list');
+});
