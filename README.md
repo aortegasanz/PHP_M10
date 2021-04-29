@@ -1,12 +1,14 @@
 # PHP_M10 - Práctica 
-PHP_10
 
-https://github.com/aortegasanz/PHP_M10
+# Enllaç GITHUB
+
+    https://github.com/aortegasanz/PHP_M10
 
 # Descripció
 
     Crear una aplicació, per a gestionar el fons de una llibreria técnica, aplicant el patró de disseny de software MVC(Model-Vista-Controlador). 
 
+# EXERCICIS
 - Nivell 1
     - Exercici 1
         Definir les rutes principals que tindrà el nostre lloc web. Per a començar simplement indicarem que les rutes retornen una cadena (així podrem comprovar que s'han creat correctament). A continuació s'inclou una taula amb les rutes a definir (Configura els mètodes GET, POST, UPDATE o DELETE d'acord a el tipus de ruta).
@@ -24,6 +26,14 @@ https://github.com/aortegasanz/PHP_M10
     - Exercici 2
         Crea les vistes php i associa-la a cadascuna de las rutes següents seguint la següent estructura:
 
+        Vista               Carpeta                     Ruta asociada
+        ------------------  --------------              ------------------
+        home.blade.php      resources/views/            /
+        login.blade.php     resources/views/auth/       login
+        index.blade.php     resources/views/catalog/    catalog
+        show.blade.php      resources/views/catalog/    catalog/show/{id}
+        create.blade.php    resources/views/catalog/    catalog/create
+        edit.blade.php      resources/views/catalog/    catalog/edit/{id}
 
         Crea una col·lecció a Postman i guarda la petició del punt anterior en ella. Exporta la col·lecció i guarda-la en un directori nou del projecte.
 

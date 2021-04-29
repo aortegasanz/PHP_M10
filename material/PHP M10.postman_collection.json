@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "d075fd85-0e97-46f8-a93e-30c13a181781",
+		"name": "PHP M10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "wWWuWWoOpXs6yILmxQKLa1tqZCM63aBCzoKOFg0J",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "X-CSRF-TOKEN",
+							"value": "wWWuWWoOpXs6yILmxQKLa1tqZCM63aBCzoKOFg0J",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/catalog/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"catalog",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/catalog/show/222",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"catalog",
+						"show",
+						"222"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/catalog/edit/69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"catalog",
+						"edit",
+						"69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Albertito",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/catalog/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"catalog",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
