@@ -4,8 +4,14 @@
         <h1>HOME</h1>        
         <br/>
         @if (isset($logout)) 
-            <h3><span style="color:orangered;">{{ $logout }}</span></h3>
+            <div class="alert alert-success">{{ $logout }}</div>
         @endif
+        @if (isset($password)) 
+            <div class="alert alert-success">{{ $password }}</div>
+        @endif
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">{{ $error }}</div>
+        @endforeach        
         <br/>
         <div class="row">
             <div class="col"><a href="{{ route('catalog.list') }}" class="text-sm text-gray-700 underline">CATALOGO</a></div>

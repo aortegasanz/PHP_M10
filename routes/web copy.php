@@ -47,33 +47,9 @@ Route::post('catalog/edit/{id}', function(Request $request, $id) {
 //------------------
 //  Exercici 2 - 3
 //------------------
-Route::get('login', function() {
+Route::post('login', function() {
     return view('auth.login');
-})->name('login');
-Route::post('login', function(Request $request) {
-    if ($request->email == 'a@a.com' && $request->password == '1234') {
-        $nueva_cookie = cookie('userId', $request->email, 5);
-        return view('home')->withCookie($nueva_cookie);
-    } else {
-        return view('home')->withErrors(['error' => 'Dades d\'accés incorrectes.']);
-    }
 });
-
-Route::get('password', function() {
-    return view('auth.password');
-})->name('password');
-Route::post('password', function(Request $request) {
-    return view('home', ['password' => 'El email para restaurar contraseña ha sido enviado a '.$request->email]);
-})->name('password');
-
-Route::get('register', function() {
-    return view('auth.register');
-})->name('register');
-Route::post('register', function(Request $request) {
-    return view('home', ['register' => 'El usuari '.$request->email.' ha sigut creat correctament.']);
-})->name('register');
-
-
 Route::get('logout', function() {
     return view('home', ['logout' => 'El usuari ha seleccionat "Logout"']);
 });
