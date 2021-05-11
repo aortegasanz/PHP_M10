@@ -8,6 +8,7 @@
         @if ($llibre)
             <form action="{{ route('catalog.store') }}" method="post">
                 @csrf
+                @method('put')
                 <div class="row">
                     <div class="col-2">
                         <strong>Identificador:</strong> {{ $llibre['id'] }}

@@ -19,6 +19,7 @@
             <div class="col">
                 <form action="{{ route('catalog.edit', 2) }}" method="GET">
                     @csrf
+                    @method('put')
                     <input type="text" name="nombre" value="alberto"/>
                     <button type="submit">Catalogo.EDIT</button>
                 </form>

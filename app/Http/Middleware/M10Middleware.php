@@ -16,11 +16,12 @@ class M10Middleware
      */
     public function handle(Request $request, Closure $next)
     {
+        /*
         echo ('
                 <div class="container text-right" style="padding:20px;">
-                    MIDDLEWARE GLOBAL >> Data actual : '.date('d/m/Y H:i:s')).'
-                </div>
-              ';
+                    MIDDLEWARE GLOBAL >> Data actual : '.date('d/m/Y H:i:s').'
+          
+                    </div>');*/
         return $next($request);
     }
 }

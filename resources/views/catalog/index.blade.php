@@ -23,8 +23,14 @@
                     <td>
                         <a href="{{ route('catalog.show',   $llibre['id']) }}"><i class="far fa-eye"></i></a> 
                         <a href="{{ route('catalog.create') }}"><i class="fas fa-plus-square"></i></i></a>
-                        <a href="{{ route('catalog.edit',   $llibre['id']) }}"><i class="fas fa-edit"></i></a> 
-                        <a href="{{ route('catalog.delete', $llibre['id']) }}"><i class="far fa-trash-alt"></i></a> 
+                        <a href="{{ route('catalog.edit', $llibre['id']) }}"><i class="fas fa-edit"></i></a> 
+                        <!--<a href="{{ route('catalog.delete', $llibre['id']) }}"><i class="far fa-trash-alt"></i></a> -->
+                        <form action="{{ route('catalog.delete', $llibre['id']) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <input type="hidden" name="id" value="{{ $llibre['id'] }}"/>
+                            <button type="submit" style="background:white;"><i class="far fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

@@ -7,6 +7,7 @@
         @endif        
         <form action="{{ route('catalog.store') }}" method="post">
             @csrf
+            @method('put')
             <div class="row">
                 <div class="col-auto">
                     <label class="form-label">Nom del llibre</label>

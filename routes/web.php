@@ -77,11 +77,12 @@ Route::post('register', function(Request $request) {
 Route::get('logout', function() {
     return view('home', ['logout' => 'El usuari ha seleccionat "Logout"']);
 });
-Route::get  ('catalog/show/{id}',   [CatalogController::class, 'show'])->name('catalog.show');
-Route::get  ('catalog/create',      [CatalogController::class, 'create'])->name('catalog.create');
-Route::get  ('catalog/delete/{id}', [CatalogController::class, 'delete'])->name('catalog.delete');
-Route::post ('catalog/store',       [CatalogController::class, 'store'])->name('catalog.store');
-Route::get  ('catalog/edit/{id}',   [CatalogController::class, 'edit'])->name('catalog.edit');
+
+Route::get('catalog/show/{id}', [CatalogController::class, 'show'])->name('catalog.show');
+Route::get('catalog/create', [CatalogController::class, 'create'])->name('catalog.create');
+Route::put('catalog/store', [CatalogController::class, 'store'])->name('catalog.store');
+Route::get('catalog/edit/{id}', [CatalogController::class, 'edit'])->name('catalog.edit');
+Route::delete('catalog/delete/{id}', [CatalogController::class, 'delete'])->name('catalog.delete');
 
 //------------------
 // Exercici 4

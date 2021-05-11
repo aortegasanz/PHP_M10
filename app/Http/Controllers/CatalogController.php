@@ -19,7 +19,7 @@ class CatalogController extends Controller
         ];
         $pageContent = 'Llista de llibres';
         return view('catalog.index', compact('pageContent', 'llibres'));
-    }
+    }   
 
     public function show($id) {
         $llibres = [ 
@@ -63,6 +63,9 @@ class CatalogController extends Controller
     }
 
     public function store(Request $request) {
+        $this->validate($request, [
+            'nom' => 'required:max:255',
+        ]);
         Session::put('success', 'Dades enmagatzemades correctament.');
         return redirect()->route('catalog.list');
     }
